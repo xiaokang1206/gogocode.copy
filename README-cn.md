@@ -35,7 +35,7 @@ const aAssignment = script.find('const a = $_$');
 const aValue = aAssignment.match?.[0]?.[0]?.value;
 // 就像替换字符串一样去替换代码
 // 但可以忽略空格、缩进或者换行的影响
-script.replace('const b = $_$', `const b = ${aValue}`);
+script.replaceAll('const b = $_$', `const b = ${aValue}`);
 // 把 ast 节点输出成字符串
 const outCode = script.generate();
 ```
